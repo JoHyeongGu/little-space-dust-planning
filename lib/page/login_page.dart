@@ -86,14 +86,9 @@ class _InputBarState extends State<InputBar> {
   final TextEditingController _controller = TextEditingController();
   double height = 50;
 
-  void setCookie(String name, String value, int days) {
-    final now = DateTime.now();
-    final expires = now.add(Duration(days: days)).toUtc().toIso8601String();
-    document.cookie = '$name=$value; expires=$expires; path=/';
-  }
 
   void right() async {
-    setCookie('login', 'pass', 30);
+    document.cookie = 'login=pass; max-age=2592000;';
     _controller.text = "";
     List<String> welcomeMents = [
       "환영합니다 콘노.",
