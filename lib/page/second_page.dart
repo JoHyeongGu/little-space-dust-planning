@@ -74,7 +74,7 @@ class SecondPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Flexible(child: Image.asset("assets/lighting_star.gif")),
-              Flexible(
+              const Flexible(
                 flex: 2,
                 child: Text(
                   "자신보다 작은 먼지들을 먹어서 몸집을 키울 수 있다.\n작은 먼지 9개당 픽셀 하나이며,\n1픽셀 수집 시 자신의 몸에 붙일 수 있다.",

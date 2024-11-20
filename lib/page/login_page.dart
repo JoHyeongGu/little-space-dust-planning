@@ -86,8 +86,14 @@ class _InputBarState extends State<InputBar> {
   final TextEditingController _controller = TextEditingController();
   double height = 50;
 
+  void setCookie(String name, String value, int days) {
+    final now = DateTime.now();
+    final expires = now.add(Duration(days: days)).toUtc().toIso8601String();
+    document.cookie = '$name=$value; expires=$expires; path=/';
+  }
+
   void right() async {
-    document.cookie = "pass";
+    setCookie('login', 'pass', 30);
     _controller.text = "";
     List<String> welcomeMents = [
       "환영합니다 콘노.",
@@ -123,7 +129,7 @@ class _InputBarState extends State<InputBar> {
     super.initState();
     // document.cookie = null;
     widget.loginData["right"] = right;
-    if (document.cookie == "pass") right();
+    if (document.cookie != null && document.cookie!.contains("pass")) right();
   }
 
   @override

@@ -33,7 +33,7 @@ class FirstPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Flexible(
+                      const Flexible(
                         child: Text(
                           '"에너지를 모아 힘을 키우는\n작은 우주먼지"',
                           style: TextStyle(
@@ -44,13 +44,13 @@ class FirstPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Flexible(child: SizedBox(height: 50)),
+                      const Flexible(child: SizedBox(height: 50)),
                       Flexible(
                         child: Container(
-                          constraints: BoxConstraints(
+                          constraints: const BoxConstraints(
                             maxWidth: 340,
                           ),
-                          child: Text(
+                          child: const Text(
                             "장르: 뱀서라이크\n그래픽: 2D 도트\n플랫폼: 안드로이드\n조작 방식: 터치 조이스틱을 활용하여 캐릭터를 움직인다.",
                             style: TextStyle(color: Colors.white, fontSize: 17),
                           ),
@@ -60,7 +60,8 @@ class FirstPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 15),
-                Flexible(child: Image.asset("assets/moving_little_space_dust.gif")),
+                Flexible(
+                    child: Image.asset("assets/moving_little_space_dust.gif")),
               ],
             ),
           ),
