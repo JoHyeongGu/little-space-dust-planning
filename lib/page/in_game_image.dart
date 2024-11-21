@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:little_space_dust_planning/tool/clickable_image.dart';
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
+class InGameImage extends StatelessWidget {
+  const InGameImage({super.key});
 
   @override
   Widget build(BuildContext context) {
