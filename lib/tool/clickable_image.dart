@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class ClickableImage extends StatefulWidget {
   final String image;
-  const ClickableImage(this.image, {super.key});
+  final bool onFrame;
+  const ClickableImage(this.image, {super.key, this.onFrame = false});
 
   @override
   State<ClickableImage> createState() => _ClickableImageState();
@@ -10,14 +11,17 @@ class ClickableImage extends StatefulWidget {
 
 class _ClickableImageState extends State<ClickableImage> {
   Widget imageFrame() => Container(
-    decoration: BoxDecoration(
-      color: Colors.white.withOpacity(0.5),
-      borderRadius: BorderRadius.circular(15),
-    ),
-    padding: const EdgeInsets.all(10),
-    margin: const EdgeInsets.symmetric(horizontal: 30),
-    child: Image.asset(widget.image),
-  );
+        decoration: BoxDecoration(
+          color: widget.onFrame ? Colors.white.withOpacity(0.5) : Colors.transparent,
+          borderRadius: BorderRadius.circular(15),
+        ),
+        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.symmetric(horizontal: 30),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(15),
+          child: Image.asset(widget.image),
+        ),
+      );
 
   void zoomImage() {
     showDialog(

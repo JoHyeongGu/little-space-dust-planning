@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LogoPage extends StatefulWidget {
-  const LogoPage({super.key});
+class LogoPart extends StatefulWidget {
+  const LogoPart({super.key});
 
   @override
-  State<LogoPage> createState() => _LogoPageState();
+  State<LogoPart> createState() => _LogoPartState();
 }
 
-class _LogoPageState extends State<LogoPage> {
+class _LogoPartState extends State<LogoPart> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -20,8 +20,20 @@ class _LogoPageState extends State<LogoPage> {
             width: double.infinity,
             height: double.infinity,
             child: Image.asset(
-              "assets/pixel_space.png",
-              fit: BoxFit.fitHeight,
+              "assets/logo_part/pixel_space.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Opacity(
+            opacity: 0.6,
+            child: Container(
+              color: Colors.black,
+              width: double.infinity,
+              height: double.infinity,
+              child: Image.asset(
+                "assets/summery_des/pixel_space_2.png",
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Container(

@@ -36,21 +36,29 @@ class InGameImage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Flexible(
-                child: ClickableImage("assets/just_dust.png"),
+                child: ClickableImage(
+                  "assets/in_game/just_dust.png",
+                  onFrame: true,
+                ),
               ),
               Flexible(
-                child: ClickableImage("assets/chat_dust.png"),
+                child: ClickableImage(
+                  "assets/in_game/chat_dust.png",
+                  onFrame: true,
+                ),
               ),
               Flexible(
-                child: ClickableImage("assets/ui_dust.png"),
+                child: ClickableImage(
+                  "assets/in_game/ui_dust.png",
+                  onFrame: true,
+                ),
               ),
             ],
           ),
-          const SizedBox(height: 50),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Flexible(child: Image.asset("assets/lighting_star.gif")),
+              Flexible(child: Image.asset("assets/in_game/lighting_star.gif")),
               const Flexible(
                 flex: 2,
                 child: Text(

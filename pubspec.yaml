@@ -54,8 +54,14 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
   assets:
     - assets/
+    - assets/in_game/
+    - assets/logo_part/
+    - assets/story_line/
+    - assets/summery_des/
+
   fonts:
     - family: pixel_dung
       fonts:
