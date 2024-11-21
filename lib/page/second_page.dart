@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:little_space_dust_planning/tool/clickable_image.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -27,45 +28,21 @@ class SecondPage extends StatelessWidget {
               color: Colors.white,
               fontSize: 30,
               fontWeight: FontWeight.bold,
-              fontFamily: "pixel",
+              fontFamily: "pixel_dung",
             ),
           ),
           const SizedBox(height: 50),
-          Row(
+          const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Flexible(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  padding: const EdgeInsets.all(10),
-                  margin: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Image.asset("assets/just_dust.png"),
-                ),
+                child: ClickableImage("assets/just_dust.png"),
               ),
               Flexible(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  padding: const EdgeInsets.all(10),
-                  margin: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Image.asset("assets/chat_dust.png"),
-                ),
+                child: ClickableImage("assets/chat_dust.png"),
               ),
               Flexible(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  padding: const EdgeInsets.all(10),
-                  margin: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Image.asset("assets/ui_dust.png"),
-                ),
+                child: ClickableImage("assets/ui_dust.png"),
               ),
             ],
           ),
@@ -81,6 +58,7 @@ class SecondPage extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 17,
+                    fontFamily: "pixel_gal",
                   ),
                 ),
               )

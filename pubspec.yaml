@@ -57,9 +57,12 @@ flutter:
   assets:
     - assets/
   fonts:
-    - family: pixel
+    - family: pixel_dung
       fonts:
         - asset: assets/fonts/DungGeunMo.ttf
+    - family: pixel_gal
+      fonts:
+        - asset: assets/fonts/Galmuri9.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

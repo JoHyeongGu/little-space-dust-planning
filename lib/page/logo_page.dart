@@ -32,6 +32,7 @@ class _LogoPageState extends State<LogoPage> {
           const Center(
             child: Logo(),
           ),
+          DownArrow(),
         ],
       ),
     );
@@ -94,10 +95,58 @@ class _LogoState extends State<Logo> {
       enabled: false,
       textAlign: TextAlign.center,
       style: const TextStyle(
-        fontFamily: "pixel",
+        fontFamily: "pixel_dung",
         fontSize: 50,
         fontWeight: FontWeight.bold,
         color: Colors.white,
+      ),
+    );
+  }
+}
+
+class DownArrow extends StatefulWidget {
+  const DownArrow({super.key});
+
+  @override
+  State<DownArrow> createState() => _DownArrowState();
+}
+
+class _DownArrowState extends State<DownArrow> {
+  double _padding = 30;
+
+  void animating() async {
+    double _gap = 10;
+    while (true) {
+      setState(() {
+        _padding += _gap;
+      });
+      await Future.delayed(Duration(milliseconds: 700));
+      setState(() {
+        _padding -= _gap;
+      });
+      await Future.delayed(Duration(milliseconds: 700));
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    animating();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: AnimatedPadding(
+        duration: Duration(milliseconds: 700),
+        curve: Curves.easeInOut,
+        padding: EdgeInsets.only(bottom: _padding),
+        child: Icon(
+          Icons.keyboard_arrow_down_rounded,
+          color: Colors.white.withOpacity(0.4),
+          size: 70,
+        ),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'dart:html';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:little_space_dust_planning/color.dart';
+import 'package:little_space_dust_planning/tool/color.dart';
 import 'package:little_space_dust_planning/page/main_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -160,7 +160,7 @@ class _InputBarState extends State<InputBar> {
             fontWeight: FontWeight.bold,
             fontSize: 23,
             letterSpacing: 0.1,
-            fontFamily: "pixel",
+            fontFamily: "pixel_dung",
           ),
           cursorColor: Colors.blueGrey,
           cursorHeight: 25,

@@ -40,7 +40,7 @@ class FirstPage extends StatelessWidget {
                             fontSize: 25,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontFamily: "pixel",
+                            fontFamily: "pixel_dung",
                           ),
                         ),
                       ),
@@ -52,7 +52,7 @@ class FirstPage extends StatelessWidget {
                           ),
                           child: const Text(
                             "장르: 뱀서라이크\n그래픽: 2D 도트\n플랫폼: 안드로이드\n조작 방식: 터치 조이스틱을 활용하여 캐릭터를 움직인다.",
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            style: TextStyle(color: Colors.white, fontSize: 17, fontFamily: "pixel_gal"),
                           ),
                         ),
                       ),
