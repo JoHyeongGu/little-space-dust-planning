@@ -113,10 +113,10 @@ class StoryContent extends StatelessWidget {
         const SizedBox(height: 50),
         const Text(
           '''
-    모험은 순탄치 않았다.
+    모험은 순탄치 않았습니다.
     온 우주에 온스(Ouns)의 빛이 사라지자, 우주 곳곳에는 에너지를 잡아먹는 괴물들이 생겨났고
-    작은 우주 먼지는 이들을 피해 에너지를 모아서,
-    우주에 빛을 가져다 줄 수 있는 새로운 온스(Ouns)가 되어야 한다.   
+    작은 우주 먼지는 괴물을 피해 에너지를 모아서,
+    우주에 빛을 가져다 줄 수 있는 새로운 온스(Ouns)가 되어야 합니다.   
           ''',
           textAlign: TextAlign.center,
           style: TextStyle(
