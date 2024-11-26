@@ -136,6 +136,7 @@ class _InputBarState extends State<InputBar> {
 
   @override
   Widget build(BuildContext context) {
+    double fontSize = MediaQuery.of(context).size.width / 30;
     return Material(
       color: Colors.transparent,
       child: AnimatedContainer(
@@ -159,7 +160,7 @@ class _InputBarState extends State<InputBar> {
           style: TextStyle(
             color: Colors.blueGrey.shade700,
             fontWeight: FontWeight.bold,
-            fontSize: 23,
+            fontSize: fontSize < 23 ? fontSize : 23,
             letterSpacing: 0.1,
             fontFamily: "pixel_dung",
           ),

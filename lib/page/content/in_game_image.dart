@@ -34,6 +34,7 @@ class InGameImage extends StatelessWidget {
           const SizedBox(height: 50),
           const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Flexible(
                 child: ClickableImage(

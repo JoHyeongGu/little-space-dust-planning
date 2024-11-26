@@ -10,10 +10,17 @@ class ClickableImage extends StatefulWidget {
 }
 
 class _ClickableImageState extends State<ClickableImage> {
-  Widget imageFrame() => Container(
+  Widget imageFrame({BuildContext? context}) => Container(
         decoration: BoxDecoration(
-          color: widget.onFrame ? Colors.white.withOpacity(0.5) : Colors.transparent,
+          color: widget.onFrame
+              ? Colors.white.withOpacity(0.5)
+              : Colors.transparent,
           borderRadius: BorderRadius.circular(15),
+        ),
+        constraints: BoxConstraints(
+          maxWidth: context != null
+              ? MediaQuery.of(context).size.width / 5
+              : double.infinity,
         ),
         padding: const EdgeInsets.all(10),
         margin: const EdgeInsets.symmetric(horizontal: 30),
@@ -45,7 +52,7 @@ class _ClickableImageState extends State<ClickableImage> {
       onTapUp: (details) {
         zoomImage();
       },
-      child: imageFrame(),
+      child: imageFrame(context: context),
     );
   }
 }

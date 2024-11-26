@@ -44,7 +44,7 @@ class _LogoPartState extends State<LogoPart> {
           const Center(
             child: Logo(),
           ),
-          DownArrow(),
+          const DownArrow(),
         ],
       ),
     );
@@ -98,6 +98,7 @@ class _LogoState extends State<Logo> {
 
   @override
   Widget build(BuildContext context) {
+    double fontSize = MediaQuery.of(context).size.width / 13;
     return TextFormField(
       controller: _controller,
       readOnly: true,
@@ -106,9 +107,9 @@ class _LogoState extends State<Logo> {
       ),
       enabled: false,
       textAlign: TextAlign.center,
-      style: const TextStyle(
+      style: TextStyle(
         fontFamily: "pixel_dung",
-        fontSize: 50,
+        fontSize: fontSize < 50 ? fontSize : 50,
         fontWeight: FontWeight.bold,
         color: Colors.white,
       ),
@@ -132,11 +133,11 @@ class _DownArrowState extends State<DownArrow> {
       setState(() {
         _padding += _gap;
       });
-      await Future.delayed(Duration(milliseconds: 700));
+      await Future.delayed(const Duration(milliseconds: 700));
       setState(() {
         _padding -= _gap;
       });
-      await Future.delayed(Duration(milliseconds: 700));
+      await Future.delayed(const Duration(milliseconds: 700));
     }
   }
 
@@ -151,7 +152,7 @@ class _DownArrowState extends State<DownArrow> {
     return Align(
       alignment: Alignment.bottomCenter,
       child: AnimatedPadding(
-        duration: Duration(milliseconds: 700),
+        duration: const Duration(milliseconds: 700),
         curve: Curves.easeInOut,
         padding: EdgeInsets.only(bottom: _padding),
         child: Icon(

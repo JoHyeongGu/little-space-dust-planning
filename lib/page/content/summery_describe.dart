@@ -5,9 +5,10 @@ class SummeryDescribe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
+      width: size.width,
+      height: size.height,
       child: Stack(
         children: [
           Container(
@@ -22,7 +23,16 @@ class SummeryDescribe extends StatelessWidget {
           Container(
             width: double.infinity,
             height: double.infinity,
-            color: Colors.black.withOpacity(0.4),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  ...List.filled(2, Colors.black.withOpacity(0.4)),
+                  Colors.black,
+                ],
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(30),
@@ -33,11 +43,12 @@ class SummeryDescribe extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Flexible(
+                      Flexible(
                         child: Text(
                           '"에너지를 모아 힘을 키우는\n작은 우주먼지"',
                           style: TextStyle(
-                            fontSize: 25,
+                            fontSize:
+                                size.width / 25 < 25 ? size.width / 25 : 25,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontFamily: "pixel_dung",
@@ -50,11 +61,12 @@ class SummeryDescribe extends StatelessWidget {
                           constraints: const BoxConstraints(
                             maxWidth: 340,
                           ),
-                          child: const Text(
+                          child: Text(
                             "장르: 뱀서라이크\n그래픽: 2D 도트\n플랫폼: 안드로이드\n조작 방식: 터치 조이스틱을 활용하여\n캐릭터를 움직인다.",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 17,
+                              fontSize:
+                                  size.width / 35 < 20 ? size.width / 35 : 20,
                               fontFamily: "pixel_gal",
                             ),
                           ),
