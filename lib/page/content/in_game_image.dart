@@ -22,11 +22,13 @@ class InGameImage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 200),
       child: Column(
         children: [
-          const Text(
-            "< 예상 인게임 화면 >",
+          Text(
+            "예상 인게임 화면",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: MediaQuery.of(context).size.width / 20 < 30
+                  ? MediaQuery.of(context).size.width / 20
+                  : 30,
               fontWeight: FontWeight.bold,
               fontFamily: "pixel_dung",
             ),
@@ -61,13 +63,15 @@ class InGameImage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Flexible(child: Image.asset("assets/in_game/lighting_star.gif")),
-              const Flexible(
+              Flexible(
                 flex: 2,
                 child: Text(
                   "자신보다 작은 먼지들을 먹어서 몸집을 키울 수 있다.\n작은 먼지 9개당 픽셀 하나이며,\n1픽셀 수집 시 자신의 몸에 붙일 수 있다.",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 17,
+                    fontSize: MediaQuery.of(context).size.width / 35 < 20
+                        ? MediaQuery.of(context).size.width / 35
+                        : 20,
                     fontFamily: "pixel_gal",
                   ),
                 ),
