@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:little_space_dust_planning/tool/global_key_manager.dart';
 
 class LogoPart extends StatefulWidget {
   const LogoPart({super.key});
@@ -8,9 +10,21 @@ class LogoPart extends StatefulWidget {
 }
 
 class _LogoPartState extends State<LogoPart> {
+  late GlobalKey key;
+  late String id;
+
+  @override
+  void initState() {
+    super.initState();
+    key = GlobalKey();
+    id = "로고";
+    context.read<GlobalKeyManager>().registerKey(id, key);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      key: key,
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       child: Stack(
@@ -62,7 +76,10 @@ class _LogoState extends State<Logo> {
   final TextEditingController _controller = TextEditingController();
 
   void textAnimating() async {
-    List<String> strList = ["Little Space Dust", "작은 우주 먼지", "작 우 먼", "L S D"];
+    List<String> strList = [
+      "Little Space Dust",
+      "작은 우주 먼지",
+    ];
     while (true) {
       for (String str in strList) {
         for (String char in str.split("")) {
