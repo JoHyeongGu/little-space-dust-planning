@@ -81,6 +81,7 @@ Map charD = {
 우주선을 타고 다니며 여러 마리씩 돌아다닌다.
 공격은 레이저 광선을 발사한다.''',
   "imgList": [
+    "assets/enemies/collector.png",
     "assets/enemies/collector_1.png",
     "assets/enemies/collector_2.png",
     "assets/enemies/collector_3.png",
